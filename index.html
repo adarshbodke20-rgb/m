@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173f35">
+<title>Aaranya Care Clinic | Family & Ayurvedic Healthcare</title>
+<style>
+:root{--green:#173f35;--green2:#245b4b;--sage:#e7eee7;--cream:#f8f6ef;--gold:#c6a66a;--ink:#1c2925;--muted:#68736d;--white:#fff;--wa:#25D366}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}a{color:inherit;text-decoration:none}
+.top-bar{background:var(--green);color:#dce6df;font-size:12px;padding:8px clamp(18px,5vw,72px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px clamp(18px,5vw,72px);border-bottom:1px solid #edf0eb;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);position:sticky;top:0;z-index:50}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.03em;color:var(--green);font-size:20px}
+.brand-mark{display:grid;place-items:center;background:var(--green);color:white;width:38px;height:38px;border-radius:11px;font-size:19px}
+.navlinks{display:flex;gap:24px;font-size:14px;font-weight:500;color:#4e5b54}.navlinks a:hover{color:var(--green2)}
+.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;padding:12px 20px;border-radius:8px;font-weight:650;font-size:13px;border:1px solid var(--green);transition:.2s;cursor:pointer}
+.nav-cta:hover,.button:hover{background:var(--green2);transform:translateY(-1px)}
+.button.light{background:transparent;color:var(--green);border-color:#b9c9bf}
+.button.whatsapp{background:var(--wa);border-color:var(--wa);color:#fff;font-size:14px}
+.button.whatsapp:hover{background:#1ebe57}
+.hero{background:var(--cream);padding:60px clamp(20px,7vw,100px) 70px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:44px;overflow:hidden}
+.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--green2);font-weight:800;display:flex;align-items:center;gap:9px}
+.eyebrow:before{content:"";width:25px;height:2px;background:var(--gold)}
+h1,h2,h3,p{margin-top:0}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,5vw,66px);line-height:1.06;letter-spacing:-.035em;color:var(--green);font-weight:500;margin:16px 0 18px;max-width:620px}
+h1 em{font-weight:400;color:#688560;font-style:italic}
+.hero-copy{max-width:520px;color:#5c6961;font-size:16px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 24px}
+.trustline{display:flex;gap:11px;align-items:center;font-size:13px;color:#526157;font-weight:500}
+.trust-dot{width:9px;height:9px;background:#25D366;border-radius:50%;box-shadow:0 0 0 4px #d5f5e0}
+.hero-visual{min-height:410px;position:relative;display:flex;align-items:center;justify-content:center}
+.portrait-card{width:min(100%,400px);height:430px;border-radius:190px 190px 18px 18px;background:linear-gradient(150deg,#d9e4d8,#a8c0ac 52%,#6b8c79);position:relative;overflow:hidden;box-shadow:0 25px 65px #1d43341c}
+.portrait-illustration{position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);width:84%;height:80%;display:flex;align-items:flex-end;justify-content:center}
+.body-shape{position:absolute;bottom:0;width:76%;height:62%;background:#f5f3e9;border-radius:48% 48% 0 0}
+.coat{position:absolute;bottom:0;width:84%;height:56%;background:#fff;border-radius:44% 44% 0 0;clip-path:polygon(18% 0,38% 0,50% 19%,62% 0,82% 0,100% 100%,0 100%)}
+.neck{position:absolute;bottom:54%;width:17%;height:16%;background:#a76f51;border-radius:30%}
+.head{position:absolute;bottom:65%;width:29%;height:28%;background:#b9805e;border-radius:46% 46% 42% 42%;z-index:2}
+.hair{position:absolute;bottom:83%;width:31%;height:15%;background:#2e302b;border-radius:55% 55% 20% 20%;z-index:3}
+.stethoscope{position:absolute;bottom:16%;width:17%;height:24%;border:5px solid #a5b5a7;border-top:0;border-radius:0 0 35px 35px;z-index:4}
+.stethoscope:after{content:"";position:absolute;bottom:-8px;left:35%;width:13px;height:13px;background:#a5b5a7;border-radius:50%}
+.floating-note{position:absolute;background:#fff;padding:14px 16px;border-radius:12px;box-shadow:0 12px 35px #1d433418;max-width:210px}
+.floating-note strong{display:block;color:var(--green);font-size:13px}
+.floating-note span{font-size:11px;color:var(--muted)}
+.note-top{top:30px;right:-5px}.note-bottom{bottom:25px;left:-20px}
+.note-icon{display:inline-grid;place-items:center;background:var(--sage);color:var(--green);width:28px;height:28px;border-radius:8px;margin-bottom:6px;font-weight:bold}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);padding:26px clamp(20px,7vw,100px);border-bottom:1px solid #edf0eb;gap:20px;background:#fff}
+.stat strong{display:block;font-family:Georgia,serif;font-size:26px;color:var(--green);font-weight:600}
+.stat span{font-size:12px;color:var(--muted)}
+section.content{padding:72px clamp(20px,7vw,100px)}
+.section-head{max-width:650px;margin-bottom:38px}
+.section-head h2{font-family:Georgia,serif;font-size:clamp(30px,3.8vw,44px);line-height:1.12;color:var(--green);font-weight:500;letter-spacing:-.02em;margin:10px 0}
+.section-head p{color:var(--muted);font-size:15px}
+.about-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:50px;align-items:center}
+.about-panel{background:var(--sage);padding:35px;border-radius:16px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+.quote-mark{font-family:Georgia,serif;font-size:58px;color:#8da38e;line-height:.8}
+.about-panel p{font-family:Georgia,serif;font-size:22px;color:var(--green);line-height:1.4;margin:16px 0}
+.about-panel small{color:#52665a;font-weight:600}
+.doctor-name{font-family:Georgia,serif;font-size:34px;color:var(--green);margin-bottom:4px}
+.credentials{font-size:13px;color:var(--green2);font-weight:700;margin-bottom:16px}
+.body-copy{color:var(--muted);font-size:14.5px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{background:#f2f5f1;border:1px solid #d8e2d7;color:var(--green);padding:7px 12px;border-radius:50px;font-size:12px;font-weight:500}
+.services{background:#fbfcf9}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:26px 24px;background:white;border:1px solid #e4ebe3;border-radius:14px;transition:.2s}
+.card:hover{border-color:var(--green2);box-shadow:0 10px 25px rgba(23,63,53,0.06)}
+.card-icon{width:44px;height:44px;background:var(--sage);color:var(--green);display:grid;place-items:center;border-radius:12px;font-size:20px;margin-bottom:18px}
+.card h3{font-size:17px;color:var(--green);margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--muted);margin:0}
+.hours-location{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.info-panel{border:1px solid #e5ebe5;border-radius:14px;padding:28px;background:#fff}
+.info-panel h3{font-family:Georgia,serif;color:var(--green);font-size:24px;font-weight:500;margin-bottom:18px}
+.row{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid #edf0eb;font-size:13.5px}
+.row:last-child{border-bottom:0}
+.row span:first-child{color:var(--muted)}
+.row strong{font-weight:650;color:var(--green);text-align:right}
+.map-box{margin-top:18px;border-radius:10px;background:linear-gradient(135deg,#e9eee5,#d4e2d0);padding:22px;text-align:center;color:var(--green)}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{border:1px solid #e7ece6;padding:24px;border-radius:14px;background:#fff}
+.stars{letter-spacing:3px;color:#d99b26;font-size:15px;margin-bottom:12px}
+.review p{font-family:Georgia,serif;color:#2c3a33;font-size:16px;line-height:1.5;margin-bottom:14px}
+.review small{font-size:12px;color:var(--muted);font-weight:600}
+.contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}
+.contact h2{font-family:Georgia,serif;font-size:clamp(32px,3.8vw,46px);line-height:1.1;color:var(--green);font-weight:500}
+.contact-details{display:grid;gap:16px;margin-top:28px}
+.contact-item{display:flex;gap:14px;align-items:center}
+.contact-item .card-icon{margin:0;width:44px;height:44px;flex-shrink:0}
+.contact-item strong{display:block;font-size:14px;color:var(--green)}
+.contact-item span{font-size:13px;color:var(--muted)}
+.contact-box{background:#fff;padding:30px;border:1px solid #e2e6dc;border-radius:16px;box-shadow:0 15px 40px rgba(23,63,53,0.06)}
+.contact-box h3{font-family:Georgia,serif;font-size:25px;font-weight:500;color:var(--green);margin-bottom:6px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:12px;font-weight:600;color:var(--green);margin-bottom:5px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 13px;border:1px solid #d4ddd5;border-radius:8px;font-size:13.5px;font-family:inherit}
+.footer{background:#102e27;color:#dce6df;padding:32px clamp(20px,7vw,100px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;font-size:12px}
+.floating-wa{position:fixed;bottom:22px;right:22px;background:var(--wa);color:#fff;padding:13px 20px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 8px 25px rgba(37,211,102,0.4);display:flex;align-items:center;gap:8px;z-index:99}
+@media(max-width:800px){
+  .navlinks,.top-bar{display:none}
+  .hero,.about-grid,.contact-grid,.hours-location{grid-template-columns:1fr;gap:28px}
+  .cards,.review-grid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr;gap:16px}
+}
+@media(max-width:500px){
+  .cards,.review-grid{grid-template-columns:1fr}
+  h1{font-size:38px}
+  section.content{padding:52px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span>📍 VIP Road, Near Shivaji Statue • Mon–Sat: 10:00 AM – 8:30 PM</span>
+  <span>📞 Emergency / Reception: <strong id="top-phone">+91 98765 43210</strong></span>
+</div>
+
+<header class="nav">
+  <a class="brand" href="#home"><span class="brand-mark">✚</span><span id="brand-name">Aaranya Care Clinic</span></a>
+  <nav class="navlinks">
+    <a href="#about">About Doctor</a>
+    <a href="#services">Treatments</a>
+    <a href="#timings">Timings & Map</a>
+    <a href="#reviews">Patient Stories</a>
+  </nav>
+  <a class="nav-cta" href="#contact">Book Appointment ↗</a>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">Trusted Family & Ayurvedic Healthcare</div>
+    <h1>Wellness begins with <em>being heard.</em></h1>
+    <p class="hero-copy">Experience attentive, unhurried medical consultations. We focus on root-cause diagnosis, clear treatment plans, and compassionate care for your entire family.</p>
+    <div class="hero-actions">
+      <a class="button" href="#contact">Book Appointment Now ↗</a>
+      <a class="button light" id="hero-call" href="tel:+919876543210">📞 Call Clinic Directly</a>
+    </div>
+    <div class="trustline"><span class="trust-dot"></span> Same-day appointments available • Walk-ins welcome</div>
+  </div>
+  <div class="hero-visual">
+    <div class="portrait-card">
+      <div class="portrait-illustration">
+        <div class="body-shape"></div><div class="coat"></div><div class="neck"></div><div class="head"></div><div class="hair"></div><div class="stethoscope"></div>
+      </div>
+    </div>
+    <div class="floating-note note-top"><div class="note-icon">✓</div><strong>12+ Years Experience</strong><span>10,000+ Happy Patients</span></div>
+    <div class="floating-note note-bottom"><div class="note-icon">♡</div><strong>Patient-First Care</strong><span>Detailed & clear guidance</span></div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><strong>12+ Yrs</strong><span>Clinical Experience</span></div>
+  <div class="stat"><strong>10,000+</strong><span>Patients Treated</span></div>
+  <div class="stat"><strong>4.9 ★</strong><span>Google Rating</span></div>
+  <div class="stat"><strong>₹300</strong><span>Consultation Fee</span></div>
+</div>
+
+<section class="content" id="about">
+  <div class="about-grid">
+    <div class="about-panel">
+      <div class="quote-mark">“</div>
+      <p>Good medicine starts with listening patiently, explaining clearly, and treating the root cause—not just the symptoms.</p>
+      <small>— Dr. Rajesh Sharma, Chief Physician</small>
+    </div>
+    <div>
+      <div class="eyebrow">Meet Your Doctor</div>
+      <h2 class="doctor-name" id="doc-name">Dr. Rajesh Sharma</h2>
+      <div class="credentials" id="doc-deg">BAMS, MD (Ayurveda) • General Family Physician (Reg. No. 48291)</div>
+      <p class="body-copy">With over 12 years of clinical experience, Dr. Rajesh Sharma combines modern diagnostic clarity with holistic family medicine and Ayurvedic care. Patients appreciate his calm demeanor and habit of explaining every prescription in simple terms.</p>
+      <p class="body-copy">Whether you are visiting for a seasonal fever, chronic lifestyle management, or long-term immunity building, our clinic ensures minimal waiting time and personalized attention.</p>
+      <div class="chips">
+        <span class="chip">✓ Certified Practitioner</span>
+        <span class="chip">✓ Digital Prescriptions</span>
+        <span class="chip">✓ Marathi, Hindi & English</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content services" id="services">
+  <div class="section-head">
+    <div class="eyebrow">Our Medical Services</div>
+    <h2>Comprehensive care under one roof.</h2>
+    <p>From everyday seasonal illnesses to long-term lifestyle conditions, we provide reliable diagnosis and gentle, effective treatment plans.</p>
+  </div>
+  <div class="cards">
+    <article class="card"><div class="card-icon">✚</div><h3>General Family Medicine</h3><p>Treatment for viral fever, cold, cough, infections, blood pressure, and everyday health concerns for all age groups.</p></article>
+    <article class="card"><div class="card-icon">☘</div><h3>Ayurvedic & Chronic Care</h3><p>Root-cause management for joint pain, arthritis, digestive issues, acidity, migraine, and sinus problems.</p></article>
+    <article class="card"><div class="card-icon">♡</div><h3>Diabetes & Thyroid Care</h3><p>Regular sugar monitoring, personalized diet charts, and sustainable lifestyle guidance to keep levels in check.</p></article>
+    <article class="card"><div class="card-icon">☼</div><h3>Skin & Hair Treatments</h3><p>Safe, holistic remedies for acne, eczema, hair fall, dandruff, and seasonal skin allergies.</p></article>
+    <article class="card"><div class="card-icon">✦</div><h3>Child Immunity & Wellness</h3><p>Suvarnaprashan drops, nutrition counseling, and gentle care for recurring childhood colds and low appetite.</p></article>
+    <article class="card"><div class="card-icon">◷</div><h3>Preventive Checkups</h3><p>Routine BP, blood sugar screening, ECG referrals, and complete follow-up tracking for senior citizens.</p></article>
+  </div>
+</section>
+
+<section class="content" id="timings">
+  <div class="section-head">
+    <div class="eyebrow">Plan Your Visit</div>
+    <h2>Clinic Timings & Location</h2>
+    <p>Walk-ins are welcome, or you can book a preferred slot on WhatsApp to skip the waiting queue.</p>
+  </div>
+  <div class="hours-location">
+    <div class="info-panel">
+      <h3>OPD Consultation Hours</h3>
+      <div class="row"><span>Monday – Saturday (Morning)</span><strong>10:00 AM – 2:00 PM</strong></div>
+      <div class="row"><span>Monday – Saturday (Evening)</span><strong>5:30 PM – 9:00 PM</strong></div>
+      <div class="row"><span>Sunday</span><strong>10:00 AM – 1:00 PM (Prior Booking)</strong></div>
+      <div class="row"><span>Consultation Fee</span><strong>₹300 (Free follow-up within 5 days)</strong></div>
+    </div>
+    <div class="info-panel">
+      <h3>Clinic Address</h3>
+      <div class="row"><span>Location</span><strong id="clinic-address">Shop No. 4, Green Park Plaza, VIP Road</strong></div>
+      <div class="row"><span>Landmark</span><strong>Opposite SBI Bank, Near Shivaji Statue</strong></div>
+      <div class="map-box">
+        <strong>📍 Easy Access & Parking Available</strong><br>
+        <span style="font-size:12px;display:block;margin:6px 0 12px">Click below to open exact directions in Google Maps</span>
+        <a class="button" href="https://maps.google.com" target="_blank">Open in Google Maps ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content services" id="reviews">
+  <div class="section-head">
+    <div class="eyebrow">Patient Stories</div>
+    <h2>Trusted by families across the city.</h2>
+    <p>Real feedback from patients who visited our clinic for consultations and long-term care.</p>
+  </div>
+  <div class="review-grid">
+    <div class="review"><div class="stars">★★★★★</div><p>“Doctor listens very calmly and doesn't prescribe unnecessary heavy medicines. My mother's knee pain has improved so much within a month.”</p><small>— Sandeep Deshmukh</small></div>
+    <div class="review"><div class="stars">★★★★★</div><p>“Very clean clinic and polite staff. Booking on WhatsApp saved my time, and the doctor explained my diet plan in detail.”</p><small>— Priya Kulkarni</small></div>
+    <div class="review"><div class="stars">★★★★★</div><p>“Best family clinic in the area. We visit for both our kids and parents. Very reasonable consultation fee and genuine guidance.”</p><small>— Rahul Jadhav</small></div>
+  </div>
+</section>
+
+<section class="content contact" id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="eyebrow">Quick Appointment</div>
+      <h2>Book your visit in 30 seconds.</h2>
+      <p class="body-copy">Fill out the quick form to send your appointment request directly to our clinic WhatsApp, or call our reception desk directly.</p>
+      <div class="contact-details">
+        <div class="contact-item"><div class="card-icon">☎</div><div><strong>Reception & Booking</strong><span id="contact-phone">+91 98765 43210</span></div></div>
+        <div class="contact-item"><div class="card-icon">⌖</div><div><strong>Clinic Address</strong><span>Shop 4, Green Park Plaza, VIP Road</span></div></div>
+        <div class="contact-item"><div class="card-icon">◷</div><div><strong>OPD Timings</strong><span>Mon–Sat: 10 AM – 2 PM & 5:30 PM – 9 PM</span></div></div>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <h3>Instant WhatsApp Booking</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">No login required. Your details go straight to our reception WhatsApp.</p>
+      <form onsubmit="sendToWhatsApp(event)">
+        <div class="form-group">
+          <label>Patient Full Name *</label>
+          <input type="text" id="p-name" placeholder="e.g., Rohit Patil" required>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number *</label>
+          <input type="tel" id="p-phone" placeholder="10-digit mobile number" required>
+        </div>
+        <div class="form-group">
+          <label>Preferred Visit Time *</label>
+          <select id="p-time">
+            <option value="Today Evening (5:30 PM - 9:00 PM)">Today Evening (5:30 PM - 9:00 PM)</option>
+            <option value="Tomorrow Morning (10:00 AM - 2:00 PM)">Tomorrow Morning (10:00 AM - 2:00 PM)</option>
+            <option value="Tomorrow Evening (5:30 PM - 9:00 PM)">Tomorrow Evening (5:30 PM - 9:00 PM)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Health Concern / Symptoms (Optional)</label>
+          <textarea id="p-msg" rows="2" placeholder="e.g., General checkup, fever, joint pain..."></textarea>
+        </div>
+        <button type="submit" class="button whatsapp" style="width:100%">💬 Confirm Booking on WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div><strong style="font-size:15px">Aaranya Care Clinic</strong><br><small>© 2026 All Rights Reserved.</small></div>
+  <div>Designed & Managed by Local Web Partner</div>
+</footer>
+
+<a class="floating-wa" id="float-wa" href="https://wa.me/919876543210?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank">
+  💬 Chat on WhatsApp
+</a>
+
+<script>
+  // ==========================================
+  // EASY EDIT SECTION FOR NEW CLIENTS
+  // Change the WhatsApp number below (keep 91 at start, no + or spaces)
+  // ==========================================
+  const CLINIC_WHATSAPP = "919876543210"; 
+
+  function sendToWhatsApp(e) {
+    e.preventDefault();
+    const name = document.getElementById('p-name').value;
+    const phone = document.getElementById('p-phone').value;
+    const time = document.getElementById('p-time').value;
+    const msg = document.getElementById('p-msg').value || "General Consultation";
+
+    const text = `Hello Doctor, I want to book an appointment.%0A%0A*Patient Name:* ${name}%0A*Phone:* ${phone}%0A*Preferred Slot:* ${time}%0A*Reason:* ${msg}`;
+    window.open(`https://wa.me/${CLINIC_WHATSAPP}?text=${text}`, '_blank');
+  }
+</script>
+</body>
+</html>
